@@ -3,323 +3,473 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dilip Meena | AI & ML Developer | IIT Mandi</title> 
-    <meta name="google-site-verification" content="oKC_SizbDsBMg7U5wJ0tOvRvbPdwt32qcq5NiK2wzKE" />
-    <!-- Tailwind CSS -->
+    <title>Dilip Meena | Founder of CodeNova | AI/ML & CS at IIT Mandi</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
-        .glass {
-            background: rgba(30, 41, 59, 0.7);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .font-code { font-family: 'Fira Code', monospace; }
+        #matrix-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            opacity: 0.18;
+            pointer-events: none;
         }
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.82);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(59, 130, 246, 0.25);
+            box-shadow: 0 10px 40px -10px rgba(0,0,0,0.5);
+        }
+        .glass-panel:hover {
+            border-color: rgba(34, 197, 94, 0.5);
+            box-shadow: 0 0 25px rgba(34, 197, 94, 0.2);
+        }
+        .glow-green { text-shadow: 0 0 12px rgba(34, 197, 94, 0.7); }
+        .glow-blue { text-shadow: 0 0 12px rgba(59, 130, 246, 0.7); }
     </style>
 </head>
-<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-blue-500 selection:text-white">
+<body class="bg-slate-950 text-slate-100 relative min-h-screen overflow-x-hidden selection:bg-blue-600 selection:text-white">
 
-    <!-- Navbar -->
-    <nav class="fixed w-full z-50 glass border-b border-slate-800">
+    <!-- Hacker Matrix Canvas -->
+    <canvas id="matrix-canvas"></canvas>
+
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-slate-950/85 backdrop-blur-md border-b border-slate-800">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-extrabold tracking-tight">
-                Dilip<span class="text-blue-500">.Meena</span>
+            <a href="#" class="font-code text-xl font-bold tracking-wider text-green-400 glow-green">
+                &lt;Mr.DilipMeena / CodeNova&gt;
             </a>
-            <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-300">
-                <a href="#about" class="hover:text-blue-400 transition">About</a>
-                <a href="#skills" class="hover:text-blue-400 transition">Skills</a>
-                <a href="#projects" class="hover:text-blue-400 transition">Projects</a>
-                <a href="#experience" class="hover:text-blue-400 transition">Internships</a>
-                <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
+            <div class="hidden lg:flex space-x-6 text-sm font-medium">
+                <a href="#about" class="hover:text-green-400 transition">Biography</a>
+                <a href="#startup" class="text-amber-400 font-semibold hover:text-amber-300 transition"><i class="fas fa-rocket mr-1"></i> Startup (CodeNova)</a>
+                <a href="#skills" class="hover:text-green-400 transition">Skills</a>
+                <a href="#experience" class="hover:text-green-400 transition">Internships</a>
+                <a href="#projects" class="hover:text-green-400 transition">Projects</a>
+                <a href="#hiring" class="hover:text-green-400 transition">Faculty & Admissions</a>
+                <a href="#contact" class="bg-blue-600 hover:bg-blue-500 px-4 py-2 rounded-lg font-semibold transition text-white">Contact</a>
             </div>
-            <a href="#contact" class="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2.5 rounded-full font-medium text-sm transition shadow-lg shadow-blue-500/20">
-                Get In Touch
-            </a>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="min-h-screen flex items-center justify-center pt-28 pb-16 px-6 relative overflow-hidden">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center z-10">
-            <div>
-                <span class="inline-block px-4 py-1.5 rounded-full text-xs font-semibold bg-blue-500/10 text-blue-400 border border-blue-500/20 mb-6">
-                    Computer Science Student @ IIT Mandi
-                </span>
-                <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight mb-6">
-                    Hi, I'm <span class="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">Dilip Meena</span>
-                </h1>
-                <p class="text-slate-400 text-lg mb-8 leading-relaxed">
-                    Passionate about building innovative solutions through Python, Machine Learning, Backend Development, and Data Analysis. Experienced researcher and developer with multiple industry internships.
-                </p>
-                <div class="flex flex-wrap gap-4">
-                    <a href="#projects" class="bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded-xl font-semibold transition flex items-center gap-2">
-                        View Projects <i class="fas fa-arrow-right text-xs"></i>
-                    </a>
-                    <a href="mailto:dilipmeena9680@gmail.com" class="glass hover:bg-slate-800 text-white px-6 py-3 rounded-xl font-semibold transition border border-slate-700">
-                        Contact Me
-                    </a>
-                </div>
-                <div class="flex items-center gap-6 mt-10 text-slate-400 text-xl">
-                    <a href="mailto:dilipmeena9680@gmail.com" class="hover:text-blue-400 transition" title="Email"><i class="fas fa-envelope"></i></a>
-                    <a href="tel:+917877598620" class="hover:text-blue-400 transition" title="Phone"><i class="fas fa-phone"></i></a>
-                    <a href="https://linkedin.com" target="_blank" class="hover:text-blue-400 transition" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com" target="_blank" class="hover:text-blue-400 transition" title="GitHub"><i class="fab fa-github"></i></a>
-                </div>
-            </div>
-
-            <!-- Profile Picture Container -->
-            <div class="relative flex justify-center">
-                <div class="absolute -inset-1 rounded-3xl bg-gradient-to-r from-blue-500 to-indigo-600 blur-xl opacity-30 animate-pulse"></div>
-                <div class="relative w-full max-w-md bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden shadow-2xl">
-                    <img src="IMG-20260827-WA0003.jpg" alt="Dilip Meena" class="w-full h-auto object-cover hover:scale-105 transition duration-500">
-                    <div class="p-4 bg-slate-900/90 border-t border-slate-800 text-center">
-                        <p class="font-bold text-slate-200">Dilip Meena</p>
-                        <p class="text-xs text-slate-400">IIT Mandi CSE • AI & ML Developer</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-slate-900/50 border-y border-slate-800/80">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <h2 class="text-3xl font-bold text-white mb-3">About Me</h2>
-                <div class="w-16 h-1 bg-blue-500 mx-auto rounded-full"></div>
-            </div>
+    <section class="min-h-screen flex items-center justify-center pt-28 pb-16 px-6">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 items-center">
             
-            <div class="grid md:grid-cols-2 gap-10">
-                <div class="glass p-8 rounded-2xl border border-slate-800">
-                    <h3 class="text-xl font-bold mb-4 text-blue-400">My Journey</h3>
-                    <p class="text-slate-300 mb-4 leading-relaxed">
-                        I am currently pursuing a Bachelor's degree in Computer Science and Engineering from **Indian Institute of Technology (IIT) Mandi**.
-                    </p>
-                    <p class="text-slate-300 leading-relaxed">
-                        My academic experience has provided a strong foundation in software development, data structures, algorithms, cutting-edge AI technologies, hacking, cybersecurity, and practical field work.
+            <div class="lg:col-span-5 flex flex-col items-center">
+                <div class="relative group">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-green-500 via-blue-500 to-purple-600 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-1000"></div>
+                    <img src="https://uploads.onecompiler.io/43ccmfcas/1788017140581/IMG-20260827-WA0003.jpg" alt="Dilip Meena" class="relative rounded-2xl w-72 h-80 lg:w-80 lg:h-96 object-cover border-2 border-slate-800 shadow-2xl">
+                </div>
+                <div class="mt-6 text-center">
+                    <span class="inline-block bg-amber-950/80 text-amber-400 text-xs font-code px-3 py-1 rounded-full border border-amber-700/60 mb-2">Founder @ CodeNova Institute</span>
+                    <h2 class="text-2xl font-bold">Mr.Dilip Meena</h2>
+                    <p class="text-sm text-slate-400 mt-1">Computer Science & Engineering | Indian Institute of Technology Mandi</p>
+                    <p class="text-xs text-slate-500 mt-1"><i class="fas fa-location-dot text-red-400"></i> Lalsot, Dausa, Rajasthan — 303503</p>
+                </div>
+            </div>
+
+            <div class="lg:col-span-7 space-y-6">
+                <div class="font-code text-sm text-green-400 glow-green">&gt; System.init("Founder & Lead Developer Portfolio")</div>
+                <h1 class="text-4xl lg:text-5xl font-extrabold leading-tight">
+                    Architecting Next-Gen Technology at <span class="text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-blue-400 to-indigo-400">IIT Mandi & CodeNova</span>
+                </h1>
+                <p class="text-slate-300 text-base lg:text-lg leading-relaxed">
+                    Fast learner, researcher, and entrepreneur building real-world AI, Machine Learning, Signal Processing, and IoT systems. spearheading **CodeNova Institute of Technology** to transform tech education and industry research.
+                </p>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4 pt-2 font-code text-xs">
+                    <div class="bg-slate-900/80 p-3 rounded-lg border border-slate-800"><span class="text-green-400 font-bold block text-lg">3500+</span> Projects Executed</div>
+                    <div class="bg-slate-900/80 p-3 rounded-lg border border-slate-800"><span class="text-blue-400 font-bold block text-lg">35+</span> Corporate Partners</div>
+                    <div class="bg-slate-900/80 p-3 rounded-lg border border-slate-800"><span class="text-amber-400 font-bold block text-lg">95%</span> ML Model Accuracy</div>
+                </div>
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <a href="#startup" class="bg-amber-600 hover:bg-amber-500 text-slate-950 font-bold px-6 py-3 rounded-lg shadow-lg transition flex items-center gap-2">
+                        <i class="fas fa-building"></i> CodeNova Startup 2026-2027
+                    </a>
+                    <a href="#hiring" class="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-semibold px-6 py-3 rounded-lg shadow-lg transition flex items-center gap-2">
+                        <i class="fas fa-briefcase"></i> Faculty & Admissions 2026-2027
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Detailed Biography & Journey Section -->
+    <section id="about" class="py-20 bg-slate-900/40 border-y border-slate-800">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-4 text-center">My Story & Background</h2>
+            <p class="text-center text-slate-400 mb-12 max-w-2xl mx-auto text-sm">From school achievements in science & mathematics to launching an initiative at IIT Mandi.</p>
+
+            <div class="grid lg:grid-cols-3 gap-8">
+                
+                <div class="glass-panel p-8 rounded-2xl space-y-4">
+                    <div class="text-blue-400 text-2xl"><i class="fas fa-graduation-cap"></i></div>
+                    <h3 class="text-xl font-bold">Academic Excellence</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Completed high school education at **Apel Academy Lalsot** with top distinction in Physics, Chemistry, and Mathematics. Built a rock-solid foundation in problem-solving and logical reasoning early on.
                     </p>
                 </div>
 
-                <div class="glass p-8 rounded-2xl border border-slate-800 space-y-6">
+                <div class="glass-panel p-8 rounded-2xl space-y-4">
+                    <div class="text-green-400 text-2xl"><i class="fas fa-university"></i></div>
+                    <h3 class="text-xl font-bold">IIT Mandi CSE Journey</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Currently pursuing B.Tech in CSE at Indian Institute of Technology Mandi (Batch b22102). Mastered Data Structures, Algorithms, Computer Vision, Signal Processing, and Backend Architecture through intensive project work.
+                    </p>
+                </div>
+
+                <div class="glass-panel p-8 rounded-2xl space-y-4">
+                    <div class="text-amber-400 text-2xl"><i class="fas fa-lightbulb"></i></div>
+                    <h3 class="text-xl font-bold">Curiosity & Diversity</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Beyond core AI coding, I have hands-on experience in web design, backend security, video editing, social media management, and strategic leadership. Fast adaptability is my biggest strength.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- STARTUP SECTION: CodeNova Institute of Technology -->
+    <section id="startup" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="bg-amber-950 text-amber-400 font-code text-xs px-4 py-1.5 rounded-full border border-amber-800">AN IIT MANDI STUDENT'S INITIATIVE</span>
+                <h2 class="text-3xl lg:text-4xl font-extrabold mt-4">CodeNova Institute of Technology</h2>
+                <p class="text-slate-400 text-sm mt-2 max-w-2xl mx-auto">Learn Today • Code Tomorrow • Build Your Future</p>
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-8 items-stretch">
+                
+                <div class="lg:col-span-7 glass-panel p-8 rounded-2xl flex flex-col justify-between">
                     <div>
-                        <h4 class="font-bold text-slate-200 text-lg">IIT Mandi</h4>
-                        <p class="text-sm text-blue-400">B.Tech in Computer Science & Engineering (2022 - Present)</p>
-                    </div>
-                    <div class="border-t border-slate-800 pt-4">
-                        <h4 class="font-bold text-slate-200 text-lg">Apel Academy Lalsot School</h4>
-                        <p class="text-sm text-slate-400">High School Completion (Mathematics & Science)</p>
-                    </div>
-                    <div class="border-t border-slate-800 pt-4">
-                        <h4 class="font-bold text-slate-200 text-lg">Academic Achievements</h4>
-                        <p class="text-xs text-slate-400 mt-1">10th Grade: Distinction in practicals | 12th Grade: Excelled in Physics, Chemistry, and Mathematics.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="py-20">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <h2 class="text-3xl font-bold text-white mb-3">Skills & Expertise</h2>
-                <div class="w-16 h-1 bg-blue-500 mx-auto rounded-full"></div>
-            </div>
-
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-                <div class="glass p-6 rounded-2xl border border-slate-800 text-center hover:border-blue-500/50 transition">
-                    <i class="fab fa-python text-4xl text-yellow-400 mb-3"></i>
-                    <h4 class="font-bold">Python</h4>
-                </div>
-                <div class="glass p-6 rounded-2xl border border-slate-800 text-center hover:border-blue-500/50 transition">
-                    <i class="fas fa-code text-4xl text-blue-400 mb-3"></i>
-                    <h4 class="font-bold">C / C++</h4>
-                </div>
-                <div class="glass p-6 rounded-2xl border border-slate-800 text-center hover:border-blue-500/50 transition">
-                    <i class="fas fa-brain text-4xl text-purple-400 mb-3"></i>
-                    <h4 class="font-bold">Machine Learning</h4>
-                </div>
-                <div class="glass p-6 rounded-2xl border border-slate-800 text-center hover:border-blue-500/50 transition">
-                    <i class="fas fa-eye text-4xl text-emerald-400 mb-3"></i>
-                    <h4 class="font-bold">Computer Vision</h4>
-                </div>
-                <div class="glass p-6 rounded-2xl border border-slate-800 text-center hover:border-blue-500/50 transition">
-                    <i class="fas fa-project-diagram text-4xl text-pink-400 mb-3"></i>
-                    <h4 class="font-bold">DSA & Algorithms</h4>
-                </div>
-                <div class="glass p-6 rounded-2xl border border-slate-800 text-center hover:border-blue-500/50 transition">
-                    <i class="fas fa-chart-line text-4xl text-cyan-400 mb-3"></i>
-                    <h4 class="font-bold">Data Analysis</h4>
-                </div>
-                <div class="glass p-6 rounded-2xl border border-slate-800 text-center hover:border-blue-500/50 transition">
-                    <i class="fas fa-server text-4xl text-indigo-400 mb-3"></i>
-                    <h4 class="font-bold">Backend Dev</h4>
-                </div>
-                <div class="glass p-6 rounded-2xl border border-slate-800 text-center hover:border-blue-500/50 transition">
-                    <i class="fab fa-git-alt text-4xl text-orange-400 mb-3"></i>
-                    <h4 class="font-bold">Git & Versioning</h4>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-slate-900/50 border-y border-slate-800/80">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <h2 class="text-3xl font-bold text-white mb-3">Featured Projects</h2>
-                <div class="w-16 h-1 bg-blue-500 mx-auto rounded-full"></div>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Project 1 -->
-                <div class="glass rounded-2xl border border-slate-800 overflow-hidden group hover:border-blue-500/50 transition duration-300">
-                    <div class="h-48 overflow-hidden bg-slate-800 relative">
-                        <img src="" alt="Smart Microwave Imaging" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                        <span class="absolute top-3 right-3 bg-blue-600 text-white text-xs px-2.5 py-1 rounded-full font-semibold">95% Accuracy</span>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-white mb-2">Smart Microwave Cancer Detection</h3>
-                        <p class="text-slate-400 text-sm mb-4">AI-powered microwave imaging system for early cancer detection and security scan applications.</p>
-                        <div class="flex flex-wrap gap-2 text-xs font-medium text-blue-300">
-                            <span class="bg-blue-950 px-2.5 py-1 rounded-md border border-blue-800/50">Python</span>
-                            <span class="bg-blue-950 px-2.5 py-1 rounded-md border border-blue-800/50">Machine Learning</span>
-                            <span class="bg-blue-950 px-2.5 py-1 rounded-md border border-blue-800/50">Signal Processing</span>
+                        <h3 class="text-2xl font-bold text-amber-400 mb-4"><i class="fas fa-award mr-2"></i> Key Milestones & Track Record</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                            CodeNova bridges the gap between academic CS curriculum and cutting-edge industry technology. Sponsored initiatives provide students direct entry into computer science, cybersecurity, and data engineering fields.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4 text-sm font-code mb-6">
+                            <div class="bg-slate-900/90 p-4 rounded-xl border border-slate-800">
+                                <div class="text-2xl font-bold text-green-400">35+</div>
+                                <div class="text-xs text-slate-400 mt-1">Private Partnerships (Google, Microsoft, Amazon, Infosys)</div>
+                            </div>
+                            <div class="bg-slate-900/90 p-4 rounded-xl border border-slate-800">
+                                <div class="text-2xl font-bold text-blue-400">3-4</div>
+                                <div class="text-xs text-slate-400 mt-1">Government Engagements Executed</div>
+                            </div>
+                            <div class="bg-slate-900/90 p-4 rounded-xl border border-slate-800">
+                                <div class="text-2xl font-bold text-purple-400">3500+</div>
+                                <div class="text-xs text-slate-400 mt-1">Projects Executed Across Platforms</div>
+                            </div>
+                            <div class="bg-slate-900/90 p-4 rounded-xl border border-slate-800">
+                                <div class="text-2xl font-bold text-amber-400">4</div>
+                                <div class="text-xs text-slate-400 mt-1">Core R&D Research Projects</div>
+                            </div>
                         </div>
+                    </div>
+
+                    <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800 text-xs text-slate-300">
+                        <strong class="text-amber-400 block mb-1">Featured Key Govt Initiative:</strong>
+                        Chandigarh AQI Monitoring & Analysis Project (Active: 21 Aug 2025 - 20 Aug 2027) — 68% Progress Completed.
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 glass-panel p-8 rounded-2xl border-amber-500/30 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-4"><i class="fas fa-book-open text-blue-400 mr-2"></i> Academic CS Programs</h3>
+                        <ul class="space-y-3 text-sm text-slate-300 mb-6">
+                            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-400"></i> School to B.Tech (Coretex to Technology)</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-400"></i> Cyber Security & Defense</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-400"></i> Data Handling & Data Visualization</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-400"></i> Computer Networks & Systems Architecture</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-400"></i> Software Engineering & Design of Algorithms</li>
+                        </ul>
+                    </div>
+                    <div class="p-4 rounded-xl bg-amber-950/40 border border-amber-800/50 text-center">
+                        <span class="text-xs text-amber-300 font-bold uppercase tracking-wider block">Admission Perk</span>
+                        <p class="text-lg font-bold text-white mt-1">100% Placement Support</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Faculty & Admissions Recruitment Portal (2026-27) -->
+    <section id="hiring" class="py-20 bg-slate-900/50 border-y border-slate-800">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="bg-blue-950 text-blue-400 font-code text-xs px-4 py-1.5 rounded-full border border-blue-800">FORMAL INVITATION 2026-27</span>
+                <h2 class="text-3xl font-extrabold mt-3">Faculty & Admissions Portal</h2>
+                <p class="text-slate-400 text-sm mt-1">Join the Elite. Code the Future with CodeNova.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                
+                <div class="glass-panel p-8 rounded-2xl space-y-4 border-green-500/30">
+                    <h3 class="text-xl font-bold text-green-400"><i class="fas fa-user-plus mr-2"></i> We Are Hiring Faculty</h3>
+                    <p class="text-slate-300 text-sm">Looking for passionate mentors to join our growing academic family.</p>
+                    
+                    <div class="space-y-2 text-xs font-code text-slate-300 pt-2">
+                        <div class="bg-slate-900 p-2.5 rounded"><strong class="text-white">Positions:</strong> Attractive Salary, Growth Opportunities, Flexible Timings, Work with Young Minds.</div>
+                        <div class="bg-slate-900 p-2.5 rounded"><strong class="text-white">Requirements:</strong> Relevant CS Degree/Experience, Excellent Communication, Teaching Passion, Industry Experience Preferred.</div>
+                    </div>
+                </div>
+
+                <div class="glass-panel p-8 rounded-2xl space-y-4 border-blue-500/30">
+                    <h3 class="text-xl font-bold text-blue-400"><i class="fas fa-file-signature mr-2"></i> Admission Desk</h3>
+                    <p class="text-slate-300 text-sm">Inviting ambitious students for comprehensive technology programs.</p>
+                    
+                    <div class="bg-slate-900 p-4 rounded-xl border border-slate-800 text-xs text-slate-300 space-y-2">
+                        <p><strong>Curriculum Coverages:</strong> Computer Networks, Operating Systems, Software Engineering, Probability & Statistics, Computer Organization.</p>
+                        <p class="text-amber-400 font-semibold">Official Portal: www.codenova.com</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Internship Experience Section -->
+    <section id="experience" class="py-20">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 text-center">Internship Experience & Roles</h2>
+            
+            <div class="space-y-6">
+
+                <div class="glass-panel p-6 rounded-2xl flex flex-col md:flex-row justify-between items-start gap-4">
+                    <div>
+                        <div class="flex items-center gap-3">
+                            <span class="text-blue-400 text-xl"><i class="fas fa-brain"></i></span>
+                            <h3 class="text-lg font-bold">IIT Mandi — AI/ML Research Intern</h3>
+                        </div>
+                        <p class="text-slate-300 text-sm mt-2">Analyzed complex multi-antenna signal arrays and implemented high-accuracy deep learning classification pipelines.</p>
+                    </div>
+                    <span class="text-xs font-code bg-blue-950 text-blue-400 px-3 py-1 rounded-full border border-blue-800 shrink-0">AI / Research</span>
+                </div>
+
+                <div class="glass-panel p-6 rounded-2xl flex flex-col md:flex-row justify-between items-start gap-4">
+                    <div>
+                        <div class="flex items-center gap-3">
+                            <span class="text-green-400 text-xl"><i class="fas fa-robot"></i></span>
+                            <h3 class="text-lg font-bold">NTPL — Artificial Intelligence Developer Intern</h3>
+                        </div>
+                        <p class="text-slate-300 text-sm mt-2">Engineered autonomous shape classification algorithms and computer vision streaming modules for obstacle navigation.</p>
+                    </div>
+                    <span class="text-xs font-code bg-green-950 text-green-400 px-3 py-1 rounded-full border border-green-800 shrink-0">Computer Vision</span>
+                </div>
+
+                <div class="glass-panel p-6 rounded-2xl flex flex-col md:flex-row justify-between items-start gap-4">
+                    <div>
+                        <div class="flex items-center gap-3">
+                            <span class="text-purple-400 text-xl"><i class="fas fa-code"></i></span>
+                            <h3 class="text-lg font-bold">Samotya Software — Software Developer Intern</h3>
+                        </div>
+                        <p class="text-slate-300 text-sm mt-2">Architected backend REST API routes, optimized query structures, and built modular frontend user dashboards.</p>
+                    </div>
+                    <span class="text-xs font-code bg-purple-950 text-purple-400 px-3 py-1 rounded-full border border-purple-800 shrink-0">Backend / Software</span>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="glass-panel p-6 rounded-2xl">
+                        <h4 class="font-bold text-white mb-1">FastJobs.io — Web Designer Intern</h4>
+                        <p class="text-xs text-slate-400">Created responsive web user interfaces and optimized site navigation metrics.</p>
+                    </div>
+                    <div class="glass-panel p-6 rounded-2xl">
+                        <h4 class="font-bold text-white mb-1">Wowidays — Social Media Manager Intern</h4>
+                        <p class="text-xs text-slate-400">Managed brand growth strategies, performance analytics, and digital community engagement.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Deep-Dive Featured Projects Section -->
+    <section id="projects" class="py-20 bg-slate-900/40 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 text-center">Featured High-Tech Projects</h2>
+
+            <div class="grid lg:grid-cols-3 gap-8">
+
+                <!-- Project 1 -->
+                <div class="glass-panel rounded-2xl overflow-hidden flex flex-col justify-between">
+                    <div>
+                        <div class="h-52 bg-slate-800 relative overflow-hidden">
+                            <img src="https://uploads.onecompiler.io/43ccmfcas/1788020603388/Gemini_Generated_Image_74a2p974a2p974a2%20(1).png" alt="Cancer Detection" class="w-full h-full object-cover opacity-70 hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 left-3 bg-blue-950 text-blue-400 text-xs font-code px-2 py-1 rounded border border-blue-700">95% Accuracy</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2">Smart Microwave Imaging for Cancer Detection</h3>
+                            <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                                Advanced non-invasive medical screening system using smart microwave sensor arrays and AI models for early cancer anomaly detection.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 font-code text-xs text-slate-400 flex flex-wrap gap-2">
+                        <span class="bg-slate-900 px-2.5 py-1 rounded border border-slate-800">Python</span>
+                        <span class="bg-slate-900 px-2.5 py-1 rounded border border-slate-800">ML</span>
+                        <span class="bg-slate-900 px-2.5 py-1 rounded border border-slate-800">Signal Processing</span>
                     </div>
                 </div>
 
                 <!-- Project 2 -->
-                <div class="glass rounded-2xl border border-slate-800 overflow-hidden group hover:border-blue-500/50 transition duration-300">
-                    <div class="h-48 overflow-hidden bg-slate-800 relative">
-                        <img src="" alt="Convex Shape Detection Bot" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                        <span class="absolute top-3 right-3 bg-emerald-600 text-white text-xs px-2.5 py-1 rounded-full font-semibold">Robotics</span>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-white mb-2">Convex Shape Detection Bot</h3>
-                        <p class="text-slate-400 text-sm mb-4">Automated robot with computer vision to identify and classify convex shapes in real-time navigation.</p>
-                        <div class="flex flex-wrap gap-2 text-xs font-medium text-emerald-300">
-                            <span class="bg-emerald-950 px-2.5 py-1 rounded-md border border-emerald-800/50">Python</span>
-                            <span class="bg-emerald-950 px-2.5 py-1 rounded-md border border-emerald-800/50">OpenCV</span>
-                            <span class="bg-emerald-950 px-2.5 py-1 rounded-md border border-emerald-800/50">Computer Vision</span>
+                <div class="glass-panel rounded-2xl overflow-hidden flex flex-col justify-between">
+                    <div>
+                        <div class="h-52 bg-slate-800 relative overflow-hidden">
+                            <img src="https://uploads.onecompiler.io/43ccmfcas/1788020543191/watermarked_img_12236195343226907864.png" alt="Obstacle Bot" class="w-full h-full object-cover opacity-70 hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 left-3 bg-green-950 text-green-400 text-xs font-code px-2 py-1 rounded border border-green-700">Real-Time Depth Vision</span>
                         </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2">Convex Shape Detection Bot</h3>
+                            <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                                Robotics navigation system combining ultrasonic sensors, OpenCV depth mapping, and convex shape identification algorithms.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 font-code text-xs text-slate-400 flex flex-wrap gap-2">
+                        <span class="bg-slate-900 px-2.5 py-1 rounded border border-slate-800">OpenCV</span>
+                        <span class="bg-slate-900 px-2.5 py-1 rounded border border-slate-800">Python</span>
+                        <span class="bg-slate-900 px-2.5 py-1 rounded border border-slate-800">Robotics</span>
                     </div>
                 </div>
 
                 <!-- Project 3 -->
-                <div class="glass rounded-2xl border border-slate-800 overflow-hidden group hover:border-blue-500/50 transition duration-300">
-                    <div class="h-48 overflow-hidden bg-slate-800 relative">
-                        <img src="" alt="Smart Home Automation" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                        <span class="absolute top-3 right-3 bg-purple-600 text-white text-xs px-2.5 py-1 rounded-full font-semibold">IoT</span>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-white mb-2">Smart Home Automation System</h3>
-                        <p class="text-slate-400 text-sm mb-4">IoT-based home automation with voice control and energy optimization features using ML algorithms.</p>
-                        <div class="flex flex-wrap gap-2 text-xs font-medium text-purple-300">
-                            <span class="bg-purple-950 px-2.5 py-1 rounded-md border border-purple-800/50">IoT</span>
-                            <span class="bg-purple-950 px-2.5 py-1 rounded-md border border-purple-800/50">Arduino</span>
-                            <span class="bg-purple-950 px-2.5 py-1 rounded-md border border-purple-800/50">Machine Learning</span>
+                <div class="glass-panel rounded-2xl overflow-hidden flex flex-col justify-between">
+                    <div>
+                        <div class="h-52 bg-slate-800 relative overflow-hidden">
+                            <img src="https://uploads.onecompiler.io/43ccmfcas/1788020556115/watermarked_img_12996115954232669321.png" alt="Smart Home Automation" class="w-full h-full object-cover opacity-70 hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 left-3 bg-purple-950 text-purple-400 text-xs font-code px-2 py-1 rounded border border-purple-700">IoT Automation</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2">Smart Home Automation System</h3>
+                            <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                                IoT ecosystem featuring voice command controls, energy consumption optimization, and real-time remote climate dashboard monitoring.
+                            </p>
                         </div>
                     </div>
+                    <div class="p-6 pt-0 font-code text-xs text-slate-400 flex flex-wrap gap-2">
+                        <span class="bg-slate-900 px-2.5 py-1 rounded border border-slate-800">IoT</span>
+                        <span class="bg-slate-900 px-2.5 py-1 rounded border border-slate-800">Arduino</span>
+                        <span class="bg-slate-900 px-2.5 py-1 rounded border border-slate-800">Python</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Skills Breakdown -->
+    <section id="skills" class="py-20">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 text-center">Technical & Leadership Stack</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="glass-panel p-5 rounded-xl text-center"><i class="fab fa-python text-yellow-400 text-3xl mb-2"></i><h4 class="font-bold">Python & PyTorch</h4></div>
+                <div class="glass-panel p-5 rounded-xl text-center"><i class="fas fa-terminal text-blue-400 text-3xl mb-2"></i><h4 class="font-bold">C++ & Data Structures</h4></div>
+                <div class="glass-panel p-5 rounded-xl text-center"><i class="fas fa-eye text-green-400 text-3xl mb-2"></i><h4 class="font-bold">Computer Vision</h4></div>
+                <div class="glass-panel p-5 rounded-xl text-center"><i class="fas fa-network-wired text-purple-400 text-3xl mb-2"></i><h4 class="font-bold">Backend Architecture</h4></div>
+                <div class="glass-panel p-5 rounded-xl text-center"><i class="fas fa-eye text-green-400 text-3xl mb-2"></i><h4 class="font-bold">Java & JavaScript (JS)</h4></div>
+                <div class="glass-panel p-5 rounded-xl text-center"><i class="fas fa-eye text-green-400 text-3xl mb-2"></i><h4 class="font-bold">Node.js & PHP</h4></div>
+                <div class="glass-panel p-5 rounded-xl text-center"><i class="fas fa-eye text-green-400 text-3xl mb-2"></i><h4 class="font-bold">HTML & CSS / Front-End Development</h4></div>
+                <div class="glass-panel p-5 rounded-xl text-center"><i class="fas fa-eye text-green-400 text-3xl mb-2"></i><h4 class="font-bold">App Development</h4></div>
+                <div class="glass-panel p-5 rounded-xl text-center"><i class="fas fa-eye text-green-400 text-3xl mb-2"></i><h4 class="font-bold">AI & ML (Artificial Intelligence & Machine Learning)</h4></div>
+                <div class="glass-panel p-5 rounded-xl text-center"><i class="fas fa-eye text-green-400 text-3xl mb-2"></i><h4 class="font-bold">Statistical Data Analysis & Correlation Analysis</h4></div>
+                <div class="glass-panel p-5 rounded-xl text-center"><i class="fas fa-eye text-green-400 text-3xl mb-2"></i><h4 class="font-bold">Data Visualization</h4></div>
+                <div class="glass-panel p-5 rounded-xl text-center"><i class="fas fa-eye text-green-400 text-3xl mb-2"></i><h4 class="font-bold">MATLAB & MySQL</h4></div>
+                <div class="glass-panel p-5 rounded-xl text-center"><i class="fas fa-eye text-green-400 text-3xl mb-2"></i><h4 class="font-bold">Cyber Security</h4></div>
+                <div class="glass-panel p-5 rounded-xl text-center"><i class="fas fa-eye text-green-400 text-3xl mb-2"></i><h4 class="font-bold">ser Interface (UI) Development</h4></div>
+                <div class="glass-panel p-5 rounded-xl text-center"><i class="fas fa-eye text-green-400 text-3xl mb-2"></i><h4 class="font-bold">Logo Making</h4></div>
+                <div class="glass-panel p-5 rounded-xl text-center"><i class="fas fa-eye text-green-400 text-3xl mb-2"></i><h4 class="font-bold">AutoCAD</h4></div>
+                <div class="glass-panel p-5 rounded-xl text-center"><i class="fas fa-eye text-green-400 text-3xl mb-2"></i><h4 class="font-bold">Account Management & Financial Analysis</h4></div>
+                <div class="glass-panel p-5 rounded-xl text-center"><i class="fas fa-eye text-green-400 text-3xl mb-2"></i><h4 class="font-bold">Teaching Assistant</h4></div>
+            
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Founder Info -->
+    <section id="contact" class="py-20 bg-slate-900/40 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-6 text-center space-y-8">
+            <h2 class="text-3xl font-bold">Get In Touch With Dilip Meena</h2>
+            <p class="text-slate-400 text-sm max-w-lg mx-auto">Open for research partnerships, CodeNova admissions, faculty applications, or AI software projects.</p>
+
+            <div class="grid md:grid-cols-3 gap-6 text-left font-code text-xs">
+                <div class="glass-panel p-6 rounded-xl">
+                    <i class="fas fa-envelope text-blue-400 text-xl mb-2"></i>
+                    <h4 class="font-bold text-white text-sm">Emails</h4>
+                    <p class="text-slate-300 mt-1">dilipmeena9680@gmail.com</p>
+                    <p class="text-slate-400">b22102@students.iitmandi.ac.in</p>
+                    <p class="text-amber-400">dilipmeenaa680@gmail.com</p>
+                </div>
+                <div class="glass-panel p-6 rounded-xl">
+                    <i class="fas fa-phone text-green-400 text-xl mb-2"></i>
+                    <h4 class="font-bold text-white text-sm">Phone</h4>
+                    <p class="text-slate-300 mt-1">+91 7877598620</p>
+                    <p class="text-slate-400">IIT Mandi / Lalsot Office</p>
+                </div>
+                <div class="glass-panel p-6 rounded-xl">
+                    <i class="fas fa-globe text-amber-400 text-xl mb-2"></i>
+                    <h4 class="font-bold text-white text-sm">Web & Location</h4>
+                    <p class="text-slate-300 mt-1">www.codenova.com</p>
+                    <p class="text-slate-400">Lalsot, Dausa, RJ - 303503</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Experience / Internships Section -->
-    <section id="experience" class="py-20">
-        <div class="max-w-5xl mx-auto px-6">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <h2 class="text-3xl font-bold text-white mb-3">Internship Experience</h2>
-                <div class="w-16 h-1 bg-blue-500 mx-auto rounded-full"></div>
-            </div>
-
-            <div class="space-y-6">
-                <!-- IIT Mandi -->
-                <div class="glass p-6 rounded-2xl border border-slate-800 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 hover:border-blue-500/50 transition">
-                    <div>
-                        <h3 class="text-lg font-bold text-white">AI/ML Research Intern</h3>
-                        <p class="text-blue-400 text-sm font-medium">IIT Mandi</p>
-                        <p class="text-slate-400 text-xs mt-1">Focused on advanced research in Artificial Intelligence, Signal Processing, and ML algorithm development.</p>
-                    </div>
-                    <span class="text-xs bg-slate-800 border border-slate-700 px-3 py-1.5 rounded-full text-slate-300">Research</span>
-                </div>
-
-                <!-- NTPL -->
-                <div class="glass p-6 rounded-2xl border border-slate-800 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 hover:border-blue-500/50 transition">
-                    <div>
-                        <h3 class="text-lg font-bold text-white">Artificial Intelligence Developer Intern</h3>
-                        <p class="text-blue-400 text-sm font-medium">NTPL</p>
-                        <p class="text-slate-400 text-xs mt-1">Built real-world AI pipelines, model integrations, and data processing architectures.</p>
-                    </div>
-                    <span class="text-xs bg-slate-800 border border-slate-700 px-3 py-1.5 rounded-full text-slate-300">AI / Engineering</span>
-                </div>
-
-                <!-- Samotya Software -->
-                <div class="glass p-6 rounded-2xl border border-slate-800 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 hover:border-blue-500/50 transition">
-                    <div>
-                        <h3 class="text-lg font-bold text-white">Software Developer Intern</h3>
-                        <p class="text-blue-400 text-sm font-medium">Samotya Software</p>
-                        <p class="text-slate-400 text-xs mt-1">Worked on software development lifecycle, web applications, and backend logic design.</p>
-                    </div>
-                    <span class="text-xs bg-slate-800 border border-slate-700 px-3 py-1.5 rounded-full text-slate-300">Software</span>
-                </div>
-
-                <!-- FastJobs.io -->
-                <div class="glass p-6 rounded-2xl border border-slate-800 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 hover:border-blue-500/50 transition">
-                    <div>
-                        <h3 class="text-lg font-bold text-white">Web Designer Intern</h3>
-                        <p class="text-blue-400 text-sm font-medium">FastJobs.io</p>
-                        <p class="text-slate-400 text-xs mt-1">Honed skills in creating intuitive, responsive web user interfaces and layouts.</p>
-                    </div>
-                    <span class="text-xs bg-slate-800 border border-slate-700 px-3 py-1.5 rounded-full text-slate-300">Web Design</span>
-                </div>
-
-                <!-- Wowidays -->
-                <div class="glass p-6 rounded-2xl border border-slate-800 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 hover:border-blue-500/50 transition">
-                    <div>
-                        <h3 class="text-lg font-bold text-white">Social Media Manager Intern</h3>
-                        <p class="text-blue-400 text-sm font-medium">Wowidays</p>
-                        <p class="text-slate-400 text-xs mt-1">Managed social media strategies, audience engagement, and performance metric optimizations.</p>
-                    </div>
-                    <span class="text-xs bg-slate-800 border border-slate-700 px-3 py-1.5 rounded-full text-slate-300">Management</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-slate-900/50 border-t border-slate-800/80">
-        <div class="max-w-4xl mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold text-white mb-4">Get In Touch</h2>
-            <p class="text-slate-400 mb-12">Feel free to reach out for collaborations, research opportunities, or technical inquiries.</p>
-
-            <div class="grid md:grid-cols-3 gap-6 mb-12">
-                <div class="glass p-6 rounded-2xl border border-slate-800">
-                    <i class="fas fa-envelope text-blue-400 text-2xl mb-3"></i>
-                    <h4 class="font-bold text-sm text-slate-200">Email</h4>
-                    <p class="text-xs text-slate-400 mt-1 break-all">dilipmeena9680@gmail.com</p>
-                    <p class="text-xs text-slate-400 break-all">b22102@students.iitmandi.ac.in</p>
-                </div>
-
-                <div class="glass p-6 rounded-2xl border border-slate-800">
-                    <i class="fas fa-phone text-blue-400 text-2xl mb-3"></i>
-                    <h4 class="font-bold text-sm text-slate-200">Phone</h4>
-                    <p class="text-xs text-slate-400 mt-1">+91 7877598620</p>
-                </div>
-
-                <div class="glass p-6 rounded-2xl border border-slate-800">
-                    <i class="fas fa-location-dot text-blue-400 text-2xl mb-3"></i>
-                    <h4 class="font-bold text-sm text-slate-200">Location</h4>
-                    <p class="text-xs text-slate-400 mt-1">IIT Mandi, Himachal Pradesh, India</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="py-8 border-t border-slate-800/80 text-center text-xs text-slate-500">
-        © 2026 Dilip Meena. Designed & Developed for IIT Mandi Portfolio.
+    <!-- Footer -->
+    <footer class="py-6 text-center text-xs text-slate-500 font-code border-t border-slate-900">
+        © 2026 Mr.Dilip Meena | Founder @ CodeNova Institute of Technology | IIT Mandi.
     </footer>
 
+    <!-- Hacker Matrix Script -->
+    <script>
+        const canvas = document.getElementById('matrix-canvas');
+        const ctx = canvas.getContext('2d');
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        const chars = "01010101CODENOVADILIPMEENAIITMANDIMACHINELEARNINGPYTHONCYBERSECURITY";
+        const fontSize = 14;
+        const columns = Math.floor(canvas.width / fontSize);
+        const drops = [];
+
+        for (let i = 0; i < columns; i++) {
+            drops[i] = Math.floor(Math.random() * -100);
+        }
+
+        function drawMatrix() {
+            ctx.fillStyle = 'rgba(2, 6, 23, 0.08)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = '#22c55e';
+            ctx.font = fontSize + 'px Fira Code, monospace';
+
+            for (let i = 0; i < drops.length; i++) {
+                const text = chars.charAt(Math.floor(Math.random() * chars.length));
+                const x = i * fontSize;
+                const y = drops[i] * fontSize;
+
+                ctx.fillText(text, x, y);
+
+                if (y > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+        }
+
+        setInterval(drawMatrix, 33);
+    </script>
 </body>
 </html>
